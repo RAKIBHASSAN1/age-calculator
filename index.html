@@ -3,14 +3,15 @@
   <head>
     <title>Birthday Calculator</title>
     <style>
+      .header {
+  background-color: #f1f1f1;
+  padding: 20px;
+  text-align: center;
+}
      .age-calculator {
   max-width: 400px;
   margin: auto;
   text-align: center;
-}
-
-.age-calculator h2 {
-  margin-bottom: 20px;
 }
 
 .age-calculator label {
@@ -29,8 +30,10 @@
     </style>
   </head>
   <body>
+    <div class="header">
+  <h1>Age Calculator</h1>
+</div>
     <div class="age-calculator">
-  <h2>Age Calculator</h2>
   <label for="birthdate">Enter Your Birthdate:</label>
   <input type="date" id="birthdate">
   <button onclick="calculateAge()">Calculate Age</button>
