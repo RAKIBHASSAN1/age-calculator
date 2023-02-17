@@ -2,30 +2,50 @@
 <html>
   <head>
     <title>Birthday Calculator</title>
+    <styles>
+     .age-calculator {
+  max-width: 400px;
+  margin: auto;
+  text-align: center;
+}
+
+.age-calculator h2 {
+  margin-bottom: 20px;
+}
+
+.age-calculator label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.age-calculator button {
+  margin-top: 10px;
+}
+
+.age-calculator #result {
+  margin-top: 20px;
+}
+    
+    </styles>
   </head>
   <body>
-    <label for="birthdate">Enter your birthdate:</label>
-    <input type="date" id="birthdate">
-    <button onclick="calculateAge()">Calculate</button>
-    <p id="result"></p>
+    <div class="age-calculator">
+  <h2>Age Calculator</h2>
+  <label for="birthdate">Enter Your Birthdate:</label>
+  <input type="date" id="birthdate">
+  <button onclick="calculateAge()">Calculate Age</button>
+  <div id="result"></div>
+</div>
     
     <script>
-      function calculateAge() {
-        const birthdateInput = document.getElementById("birthdate");
-        const birthdate = new Date(birthdateInput.value);
-        const today = new Date();
-        
-        const years = today.getFullYear() - birthdate.getFullYear();
-        const months = today.getMonth() - birthdate.getMonth();
-        const days = today.getDate() - birthdate.getDate();
-        
-        if (months < 0 || (months === 0 && days < 0)) {
-          years--;
-        }
-        
-        const result = document.getElementById("result");
-        result.textContent = "You are " + years + " years old.";
-      }
+     function calculateAge() {
+  const birthdate = new Date(document.getElementById("birthdate").value);
+  const ageInMs = Date.now() - birthdate.getTime();
+  const ageDate = new Date(ageInMs);
+  const age = Math.abs(ageDate.getUTCFullYear() - 1970);
+
+  document.getElementById("result").innerHTML = `Your age is ${age} years old.`;
+}
     </script>
   </body>
 </html>
