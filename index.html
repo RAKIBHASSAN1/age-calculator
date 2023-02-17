@@ -37,6 +37,13 @@
        .content p{
       font-size: 18 px;
       }
+      .new{
+        width: 200px;
+      height: 90px;
+     padding: 15px;
+     background-color: coral;
+   box-shadow: 10px 10px;
+      }
     </style>
   </head>
   <body>
@@ -59,10 +66,10 @@
 <p>In conclusion, an age calculator is a useful tool that is used to calculate a person's age based on their date of birth. It is a simple but essential tool that is used in many different contexts, including healthcare, education, financial planning, and website/app development.</p>
     </div>
       <div class="age-calculator">
-  <label for="birthdate">Enter Your Birthdate:</label>
+  <label class="new" for="birthdate">Enter Your Birthdate:</label>
   <input type="date" id="birthdate">
   <button onclick="calculateAge()">Calculate Age</button>
-  <div id="result"></div>
+  <div id="result"></div><br><br>
 </div>
     
     <script>
